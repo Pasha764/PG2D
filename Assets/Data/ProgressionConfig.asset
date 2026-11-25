@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fda3355867b33468de9b9eac720a01, type: 3}
+  m_Name: ProgressionConfig
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressionConfig
+  xpDasar: 20
+  pangkat: 1.5
+  levelMaks: 10
+  rewards:
+  - {fileID: 11400000, guid: 72c956e1e731114469e3b5aa26000456, type: 2}
+  - {fileID: 11400000, guid: ff102eeb698d7774893e52e370d7fa74, type: 2}

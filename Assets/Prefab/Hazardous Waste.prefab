@@ -146,6 +146,7 @@ MonoBehaviour:
   maxHealth: 2
   invincibilityTime: 0.3
   warnaKena: {r: 0, g: 0, b: 1, a: 1}
+  suaraKena: {fileID: 8300000, guid: 61d78790fbda02d46954edc2dd334c36, type: 3}
 --- !u!114 &6049563229196203750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c66fd02c1eb47d43948b516a6cdd44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pointValue: 10
-  fallSpeed: 2
   xpValue: 10
+  suaraTangkap: {fileID: 0}
   damageToPlayer: 1
   swayAmount: 0.5
   pengaliXP: 2

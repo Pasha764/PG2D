@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class LevelReward : MonoBehaviour
+public abstract class LevelReward : ScriptableObject
 {
-    public virtual string Deskripsi => "Reward";
+    public abstract string Deskripsi { get; }
 
-    public virtual void Terapkan(PlayerController pemain)
-    {
-        Debug.Log("Reward ini belum punya efek.");
-    }
+    public abstract void Terapkan(PlayerController pemain);
 }

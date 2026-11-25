@@ -1,19 +1,24 @@
 using UnityEngine;
 
-public class WasteItem : GameEntity
+public abstract class WasteItem : GameEntity
 {
-    [SerializeField] protected int pointValue = 10;
-    [SerializeField] protected float fallSpeed = 2f;
-    [SerializeField] protected int xpValue = 5; // P6
+    protected WasteData data;
+    protected int pointValue = 10;
+    protected float fallSpeed = 2f;
+    [SerializeField] private int xpValue = 5; // P6
     protected string info = "Sampah terkumpul";
     protected ScoreKeeper scoreKeeper;
     protected ProgressionSystem progression;
+    [Header("Audio")]
+    [SerializeField] private AudioClip suaraTangkap;
+    private AudioManager audioManager;
 
     protected override void Start()
     {
         base.Start();
         scoreKeeper = FindAnyObjectByType<ScoreKeeper>();
         progression = FindAnyObjectByType<ProgressionSystem>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     protected virtual void Update()
@@ -29,15 +34,19 @@ public class WasteItem : GameEntity
 
     void OnMouseDown()
     {
+        if (Time.timeScale == 0f) return; 
         Collect();
     }
     protected virtual void Collect()
     {
         Debug.Log(info);
         scoreKeeper.AddPoints(pointValue, info);
-        BeriXP();
+        if (audioManager != null)                       
+        audioManager.Putar(suaraTangkap);
         Remove();
+        BeriXP();
     }
+  
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -68,5 +77,17 @@ public class WasteItem : GameEntity
         progression.AddXP(HitungXP());
     }
 
-    
+    protected virtual void SalinData()
+    {
+        if (data == null)
+        {
+            Debug.LogWarning(name + ": kolom Data masih kosong.");
+            return;
+        }
+
+        pointValue = data.pointValue;
+        xpValue    = data.xpValue;
+        fallSpeed  = data.fallSpeed;
+        info       = data.namaJenis + " terkumpul";    
+    }
 }

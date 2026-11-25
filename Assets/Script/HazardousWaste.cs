@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class HazardousWaste : WasteItem
 {
+    private HazardousWasteData dataB3; 
     [SerializeField] private int damageToPlayer = 1;
     [SerializeField] private float swayAmount = 0.5f;
     [SerializeField] private int pengaliXP = 2; // P6
@@ -65,5 +66,19 @@ public class HazardousWaste : WasteItem
             health.Died -= SaatDinetralkan;
             health.Died -= BeriXP;
         }
+    }
+    protected override void SalinData()
+    {
+        base.SalinData();
+        dataB3 = data as HazardousWasteData;
+
+        if (dataB3 == null)
+        {
+            Debug.LogWarning(name + ": Data-nya bukan " + "HazardousWasteData, angka B3 memakai bawaan.");
+            return;
+        }
+
+        damageToPlayer = dataB3.damageAwal;
+        pengaliXP = dataB3.pengaliXP;
     }
 }

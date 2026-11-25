@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Reward_FireRate", menuName = "Eco-Sorter/Reward/Fire Rate")]
+
 public class FireRateReward : LevelReward
 {
     [SerializeField] private float faktor = 0.8f;

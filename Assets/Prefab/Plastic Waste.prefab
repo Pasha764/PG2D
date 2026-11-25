@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7de491ac1b6b545a19e758a2974f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pointValue: 10
-  fallSpeed: 2
+  xpValue: 8
+  suaraTangkap: {fileID: 8300000, guid: d2b1faa5c16b6e74fba3ed2860c33897, type: 3}
 --- !u!58 &-2677145569532669833
 CircleCollider2D:
   m_ObjectHideFlags: 0
